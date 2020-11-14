@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{   int mysteriousnumber,tentative;
+    const int upper=100,lower=1;
+    int times=0 ;
+    printf("welcome to + - gambling game \n");
+    printf("the mysterious number is between 1 and 100\n");
+    srand(time(0));
+    mysteriousnumber=(rand()%(upper-lower+1))+lower;
+    do{
+        printf("enter your tentative\n");
+        scanf("%d",&tentative);
+        times++;
+        if(tentative<mysteriousnumber){
+        printf("\nupper\n");
+        }
+        else if(tentative>mysteriousnumber){
+        printf("\nlower\n");
+        }
+        else{
+        printf("\n\n    congrats!!you win!!");
+        printf("you've found the mysterious number after %d times ",times);
+        }
+    }while(tentative!=mysteriousnumber);
+
+   return 0;
+}
